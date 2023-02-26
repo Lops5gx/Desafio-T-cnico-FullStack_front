@@ -105,7 +105,7 @@ export default {
     // },
 
     getInstituicao(){
-      axios.get("http://localhost:8000/api/instituicao",{headers}).then((res) =>{
+      axios.get("http://localhost:8000/api/instituicao",{headers}).then((respostaInstituicao) =>{
         this.instituicoes = respostaInstituicao.data;
       }).catch((error) =>{
         console.log(error);
@@ -124,7 +124,7 @@ export default {
 
     simular(){
       const dados = {"valor_emprestimo": this.valor_emprestimo, "instituicoes": this.instituicao,"convenio": this.convenio,"parcela": this.parcela};
-      axios.post("http://localhost:8000/api/simular", dados).then((res) =>{
+      axios.post("http://localhost:8000/api/simular", dados).then((respostaSimualcao) =>{
         let data= respostaSimualcao.data;
         const newData = [];
 
